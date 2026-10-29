@@ -33,4 +33,64 @@
  */
 export function calculateDosaOrder(type, quantity = 1, isSpicy = false) {
   // Your code here
+  if(typeof type!=="string") return null;
+  if(type.toLowerCase()!=="plain".toLowerCase() && type.toLowerCase()!=="masala".toLowerCase() && type.toLowerCase()!=="onion".toLowerCase() && type.toLowerCase()!=="butter".toLowerCase() && type.toLowerCase()!=="paper".toLowerCase() && type.toLowerCase()!=="cheese".toLowerCase()) return null;
+  if(!Number.isInteger(quantity) || quantity<=0) return null;
+  let typing ;
+  let quant ;
+  let isSpicying;
+  let valuePerDosa;
+  let netTotal;
+  if(type.toLowerCase()==="plain".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 40 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+  else if(type.toLowerCase()==="masala".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 60 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+  else if(type.toLowerCase()==="onion".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 50 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+  else if(type.toLowerCase()==="butter".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 70 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+  else if(type.toLowerCase()==="paper".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 90 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+  else if(type.toLowerCase()==="cheese".toLowerCase()){
+    typing = type;
+    quant = quantity;
+    isSpicying = isSpicy ? 10:0;
+    valuePerDosa = 80 + isSpicying;
+    netTotal = valuePerDosa * quant;
+  }
+
+  return{type:typing,quantity:quant,pricePerDosa:valuePerDosa,total:netTotal,};
+  
+  
 }
+calculateDosaOrder("plain",2,true);
+// console.log(typing);
+// console.log(quant);
+// console.log(isSpicying);
+// console.log(valuePerDosa);
+// console.log(netTotal);
